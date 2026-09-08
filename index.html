@@ -4,16 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#111827">
-<title>RPS612 | Regan's Property Services</title>
+<title>Regan's Property Services</title>
 
 <style>
 *{box-sizing:border-box}
+
 body{
   margin:0;
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
   background:#f3f4f6;
   color:#111827;
 }
+
 header{
   background:#111827;
   color:white;
@@ -22,30 +24,37 @@ header{
   top:0;
   z-index:10;
 }
+
 .brand{
   font-size:22px;
   font-weight:800;
 }
+
 .tagline{
   font-size:12px;
   opacity:.75;
   margin-top:3px;
 }
+
 main{
   max-width:700px;
   margin:auto;
   padding:16px 16px 90px;
 }
+
 .screen{display:none}
 .screen.active{display:block}
+
 h1{
   font-size:25px;
   margin:8px 0 18px;
 }
+
 h2{
   font-size:19px;
   margin:20px 0 12px;
 }
+
 .card{
   background:white;
   border-radius:16px;
@@ -53,25 +62,30 @@ h2{
   margin-bottom:14px;
   box-shadow:0 2px 10px rgba(0,0,0,.06);
 }
+
 .grid{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:12px;
 }
+
 .stat{
   background:#111827;
   color:white;
   border-radius:16px;
   padding:16px;
 }
+
 .stat small{
   opacity:.7;
 }
+
 .stat strong{
   display:block;
   font-size:25px;
   margin-top:6px;
 }
+
 button{
   border:0;
   border-radius:12px;
@@ -80,33 +94,40 @@ button{
   font-weight:700;
   cursor:pointer;
 }
+
 .primary{
   background:#111827;
   color:white;
 }
+
 .secondary{
   background:#e5e7eb;
   color:#111827;
 }
+
 .success{
   background:#166534;
   color:white;
 }
+
 .danger{
   background:#b91c1c;
   color:white;
 }
+
 .actions{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:10px;
 }
+
 label{
   display:block;
   font-size:13px;
   font-weight:700;
   margin:12px 0 6px;
 }
+
 input,select,textarea{
   width:100%;
   padding:13px;
@@ -115,28 +136,34 @@ input,select,textarea{
   font-size:16px;
   background:white;
 }
+
 textarea{
-  min-height:90px;
+  min-height:100px;
   resize:vertical;
 }
+
 .full{
   width:100%;
   margin-top:12px;
 }
+
 .job{
   border:1px solid #e5e7eb;
   border-radius:12px;
   padding:13px;
   margin-top:10px;
 }
+
 .job strong{
   display:block;
   font-size:16px;
 }
+
 .muted{
   color:#6b7280;
   font-size:13px;
 }
+
 .badge{
   display:inline-block;
   padding:5px 9px;
@@ -146,6 +173,7 @@ textarea{
   font-weight:700;
   margin-top:7px;
 }
+
 .estimate-total{
   background:#111827;
   color:white;
@@ -154,23 +182,92 @@ textarea{
   margin-top:16px;
   text-align:center;
 }
+
 .estimate-total small{
   opacity:.7;
 }
+
 .estimate-total strong{
   display:block;
   font-size:38px;
   margin-top:5px;
 }
+
 .price-row{
   display:flex;
   justify-content:space-between;
   padding:9px 0;
   border-bottom:1px solid #eee;
 }
+
 .price-row:last-child{
   border-bottom:0;
 }
+
+.upload-box{
+  border:2px dashed #9ca3af;
+  border-radius:14px;
+  padding:20px 14px;
+  text-align:center;
+  background:#f9fafb;
+  margin-top:10px;
+}
+
+.upload-box strong{
+  display:block;
+  font-size:17px;
+  margin-bottom:5px;
+}
+
+.upload-box input{
+  margin-top:12px;
+  border:0;
+  padding:0;
+}
+
+.file-list{
+  margin-top:10px;
+}
+
+.file-item{
+  background:#f3f4f6;
+  padding:9px;
+  border-radius:9px;
+  margin-top:6px;
+  font-size:13px;
+  display:flex;
+  justify-content:space-between;
+  gap:8px;
+}
+
+.quote-hero{
+  background:#111827;
+  color:white;
+  border-radius:18px;
+  padding:22px;
+  text-align:center;
+  margin-bottom:15px;
+}
+
+.quote-hero h2{
+  margin:0 0 6px;
+  font-size:24px;
+}
+
+.quote-hero p{
+  margin:0;
+  opacity:.75;
+  font-size:14px;
+}
+
+.notice{
+  background:#fef3c7;
+  border-radius:12px;
+  padding:12px;
+  font-size:13px;
+  margin-top:12px;
+}
+
 .nav{
   position:fixed;
   bottom:0;
@@ -183,25 +280,18 @@ textarea{
   padding:8px 4px;
   z-index:20;
 }
+
 .nav button{
   background:none;
   color:#6b7280;
   font-size:11px;
   padding:7px;
 }
-.nav button.active{
-  color:#111827;
-  font-weight:800;
-}
-.note{
-  background:#fef3c7;
-  border-radius:12px;
-  padding:12px;
-  font-size:13px;
-  margin-top:12px;
-}
+
 @media(min-width:650px){
-  .actions{grid-template-columns:repeat(4,1fr)}
+  .actions{
+    grid-template-columns:repeat(4,1fr);
+  }
 }
 </style>
 </head>
@@ -215,11 +305,115 @@ textarea{
 
 <main>
 
+<!-- CUSTOMER QUOTE REQUEST -->
+<section id="quote" class="screen">
+
+  <div class="quote-hero">
+    <h2>Get Your Free Quote</h2>
+    <p>Tell us what you need removed and show us what you're working with.</p>
+  </div>
+
+  <div class="card">
+
+    <h2>Contact Information</h2>
+
+    <label>Name</label>
+    <input id="quoteName" placeholder="Your name">
+
+    <label>Phone</label>
+    <input id="quotePhone" type="tel" placeholder="Phone number">
+
+    <label>Email</label>
+    <input id="quoteEmail" type="email" placeholder="Email address">
+
+    <label>Job Address</label>
+    <input id="quoteAddress" placeholder="Address">
+
+    <h2>What do you need removed?</h2>
+
+    <select id="quoteService">
+      <option>Junk Removal</option>
+      <option>Garage Cleanout</option>
+      <option>Basement Cleanout</option>
+      <option>House Cleanout</option>
+      <option>Move-Out Cleanout</option>
+      <option>Appliance Removal</option>
+      <option>Furniture Removal</option>
+      <option>Construction Debris</option>
+      <option>Property Preservation</option>
+      <option>Other</option>
+    </select>
+
+    <label>Tell us about the job</label>
+
+    <textarea
+      id="quoteNotes"
+      placeholder="Example: Cleaning out garage and basement. Everything in the photos needs to go."
+    ></textarea>
+
+    <h2>📸 Show us what you've got</h2>
+
+    <div class="upload-box">
+
+      <strong>Add Photos</strong>
+
+      <div class="muted">
+        Photos help us provide a more accurate quote.
+      </div>
+
+      <input
+        id="quotePhotos"
+        type="file"
+        accept="image/*"
+        multiple
+        onchange="showFiles('quotePhotos','photoList')"
+      >
+
+      <div id="photoList" class="file-list"></div>
+
+    </div>
+
+    <div class="upload-box">
+
+      <strong>🎥 Add Video</strong>
+
+      <div class="muted">
+        A quick walkthrough video can be extremely helpful.
+      </div>
+
+      <input
+        id="quoteVideos"
+        type="file"
+        accept="video/*"
+        multiple
+        onchange="showFiles('quoteVideos','videoList')"
+      >
+
+      <div id="videoList" class="file-list"></div>
+
+    </div>
+
+    <div class="notice">
+      For now, this preview lets you select photos and videos from your phone.
+      Cloud submission will be connected in the next stage.
+    </div>
+
+    <button class="primary full" onclick="submitQuoteRequest()">
+      📤 Submit Quote Request
+    </button>
+
+  </div>
+
+</section>
+
+
 <!-- DASHBOARD -->
 <section id="dashboard" class="screen active">
+
   <h1>Dashboard</h1>
 
   <div class="grid">
+
     <div class="stat">
       <small>Today's Jobs</small>
       <strong id="todayJobs">0</strong>
@@ -236,22 +430,42 @@ textarea{
     </div>
 
     <div class="stat">
-      <small>Estimates</small>
-      <strong id="estimateCount">0</strong>
+      <small>Quote Requests</small>
+      <strong id="quoteCount">0</strong>
     </div>
+
   </div>
 
   <h2>Quick Actions</h2>
 
   <div class="actions">
-    <button class="primary" onclick="show('estimate')">🧮 Estimate</button>
-    <button class="primary" onclick="show('newjob')">➕ New Job</button>
-    <button class="secondary" onclick="show('jobs')">🚚 View Jobs</button>
-    <button class="secondary" onclick="show('expenses')">💰 Expenses</button>
+
+    <button class="primary" onclick="show('quote')">
+      📸 Customer Quote
+    </button>
+
+    <button class="primary" onclick="show('estimate')">
+      🧮 Estimate
+    </button>
+
+    <button class="secondary" onclick="show('newjob')">
+      ➕ New Job
+    </button>
+
+    <button class="secondary" onclick="show('jobs')">
+      🚚 View Jobs
+    </button>
+
   </div>
 
+  <h2>Recent Quote Requests</h2>
+
+  <div id="recentQuotes"></div>
+
   <h2>Recent Jobs</h2>
+
   <div id="recentJobs"></div>
+
 </section>
 
 
@@ -272,80 +486,122 @@ textarea{
     <input id="estAddress" placeholder="Job address">
 
     <label>Load Size</label>
+
     <select id="loadSize" onchange="calculateEstimate()">
+
       <option value="0">Select load size</option>
-      <option value="quarter">¼ Truck</option>
-      <option value="half">½ Truck</option>
-      <option value="threequarter">¾ Truck</option>
-      <option value="full">Full Truck</option>
+
+      <option value="quarter">
+        ¼ Load
+      </option>
+
+      <option value="half">
+        ½ Load
+      </option>
+
+      <option value="threequarter">
+        ¾ Load
+      </option>
+
+      <option value="full">
+        Full Load
+      </option>
+
     </select>
 
     <label>Special / Heavy Items</label>
+
     <select id="specialItems" onchange="calculateEstimate()">
+
       <option value="0">None</option>
-      <option value="25">Small special item +$25</option>
-      <option value="50">Heavy / difficult item +$50</option>
-      <option value="100">Large / specialty item +$100</option>
-      <option value="custom">Custom amount</option>
+
+      <option value="25">
+        Small special item +$25
+      </option>
+
+      <option value="50">
+        Heavy / difficult item +$50
+      </option>
+
+      <option value="100">
+        Large / specialty item +$100
+      </option>
+
+      <option value="custom">
+        Custom amount
+      </option>
+
     </select>
 
     <div id="customSpecialBox" style="display:none">
+
       <label>Custom Special Item Charge</label>
-      <input id="customSpecial" type="number" min="0" step="1" value="0" oninput="calculateEstimate()">
+
+      <input
+        id="customSpecial"
+        type="number"
+        min="0"
+        step="1"
+        value="0"
+        oninput="calculateEstimate()"
+      >
+
     </div>
 
     <label>Access / Difficulty</label>
+
     <select id="difficulty" onchange="calculateEstimate()">
-      <option value="0">Normal access — $0</option>
-      <option value="25">Difficult access — +$25</option>
-      <option value="50">Very difficult access — +$50</option>
-      <option value="100">Extreme / labor-intensive — +$100</option>
+
+      <option value="0">
+        Normal access — $0
+      </option>
+
+      <option value="25">
+        Difficult access — +$25
+      </option>
+
+      <option value="50">
+        Very difficult access — +$50
+      </option>
+
+      <option value="100">
+        Extreme / labor-intensive — +$100
+      </option>
+
     </select>
 
     <label>Additional Charge</label>
-    <input id="additional" type="number" min="0" step="1" value="0" oninput="calculateEstimate()">
 
-    <div class="note">
-      Disposal/dump costs are built into the customer quote. No hourly labor billing.
+    <input
+      id="additional"
+      type="number"
+      min="0"
+      step="1"
+      value="0"
+      oninput="calculateEstimate()"
+    >
+
+    <div class="notice">
+      Disposal/dump costs are built into the customer quote.
+      RPS does not use hourly billing.
     </div>
 
     <div class="estimate-total">
+
       <small>Customer Quote</small>
+
       <strong id="estimateTotal">$0</strong>
+
     </div>
 
-    <button class="success full" onclick="saveEstimate()">💾 Save Estimate</button>
-    <button class="secondary full" onclick="clearEstimate()">Clear</button>
+    <button class="success full" onclick="saveEstimate()">
+      💾 Save Estimate
+    </button>
 
-  </div>
+    <button class="secondary full" onclick="clearEstimate()">
+      Clear
+    </button>
 
-  <div class="card">
-    <h2>Current Pricing</h2>
-
-    <div class="price-row">
-      <span>¼ Truck</span>
-      <strong id="priceQuarter">$0</strong>
-    </div>
-
-    <div class="price-row">
-      <span>½ Truck</span>
-      <strong id="priceHalf">$0</strong>
-    </div>
-
-    <div class="price-row">
-      <span>¾ Truck</span>
-      <strong id="priceThree">$0</strong>
-    </div>
-
-    <div class="price-row">
-      <span>Full Truck</span>
-      <strong id="priceFull">$0</strong>
-    </div>
-
-    <p class="muted">
-      Pricing is currently set to $0 until you decide your starting rates.
-      You can update these later in Settings.
-    </p>
   </div>
 
 </section>
@@ -357,7 +613,13 @@ textarea{
   <h1>Jobs</h1>
 
   <div class="card">
-    <input id="jobSearch" placeholder="Search jobs..." oninput="renderJobs()">
+
+    <input
+      id="jobSearch"
+      placeholder="Search jobs..."
+      oninput="renderJobs()"
+    >
+
   </div>
 
   <div id="jobsList"></div>
@@ -379,6 +641,7 @@ textarea{
     <input id="jobPhone" type="tel" placeholder="Phone number">
 
     <label>Service</label>
+
     <select id="jobService">
       <option>Junk Removal</option>
       <option>Cleanout</option>
@@ -393,6 +656,7 @@ textarea{
     <input id="jobDate" type="date">
 
     <label>Status</label>
+
     <select id="jobStatus">
       <option>Scheduled</option>
       <option>In Progress</option>
@@ -401,20 +665,35 @@ textarea{
     </select>
 
     <label>Estimate / Price</label>
-    <input id="jobEstimate" type="number" min="0" step="1" placeholder="0">
+
+    <input
+      id="jobEstimate"
+      type="number"
+      min="0"
+      step="1"
+      placeholder="0"
+    >
 
     <label>Paid?</label>
+
     <select id="jobPaid">
       <option value="no">No</option>
       <option value="yes">Yes</option>
     </select>
 
     <label>Notes</label>
-    <textarea id="jobNotes" placeholder="Job details..."></textarea>
 
-    <button class="primary full" onclick="addJob()">Save Job</button>
+    <textarea
+      id="jobNotes"
+      placeholder="Job details..."
+    ></textarea>
+
+    <button class="primary full" onclick="addJob()">
+      Save Job
+    </button>
 
   </div>
+
 </section>
 
 
@@ -424,7 +703,11 @@ textarea{
   <h1>Expenses</h1>
 
   <div class="card">
-    <button class="primary full" onclick="addExpense()">➕ Add Expense</button>
+
+    <button class="primary full" onclick="addExpense()">
+      ➕ Add Expense
+    </button>
+
   </div>
 
   <div id="expensesList"></div>
@@ -442,48 +725,96 @@ textarea{
     <h2>Business</h2>
 
     <label>Business Name</label>
-    <input id="businessName" value="Regan's Property Services">
+
+    <input
+      id="businessName"
+      value="Regan's Property Services"
+    >
 
     <label>Username</label>
+
     <input value="RPS612" disabled>
 
     <h2>Estimate Pricing</h2>
 
-    <label>¼ Truck Price</label>
-    <input id="setQuarter" type="number" min="0" step="1" value="0">
+    <label>¼ Load Price</label>
 
-    <label>½ Truck Price</label>
-    <input id="setHalf" type="number" min="0" step="1" value="0">
+    <input
+      id="setQuarter"
+      type="number"
+      min="0"
+      step="1"
+      value="0"
+    >
 
-    <label>¾ Truck Price</label>
-    <input id="setThree" type="number" min="0" step="1" value="0">
+    <label>½ Load Price</label>
 
-    <label>Full Truck Price</label>
-    <input id="setFull" type="number" min="0" step="1" value="0">
+    <input
+      id="setHalf"
+      type="number"
+      min="0"
+      step="1"
+      value="0"
+    >
 
-    <button class="success full" onclick="saveSettings()">Save Settings</button>
+    <label>¾ Load Price</label>
 
-    <button class="danger full" onclick="resetData()">Reset App Data</button>
+    <input
+      id="setThree"
+      type="number"
+      min="0"
+      step="1"
+      value="0"
+    >
+
+    <label>Full Load Price</label>
+
+    <input
+      id="setFull"
+      type="number"
+      min="0"
+      step="1"
+      value="0"
+    >
+
+    <button class="success full" onclick="saveSettings()">
+      Save Settings
+    </button>
+
+    <button class="danger full" onclick="resetData()">
+      Reset App Data
+    </button>
 
   </div>
 
 </section>
 
+
 </main>
 
 
-<!-- NAVIGATION -->
+<!-- NAV -->
 <nav class="nav">
 
-  <button onclick="show('dashboard')">🏠<br>Home</button>
+  <button onclick="show('dashboard')">
+    🏠<br>Home
+  </button>
 
-  <button onclick="show('estimate')">🧮<br>Estimate</button>
+  <button onclick="show('quote')">
+    📸<br>Quote
+  </button>
 
-  <button onclick="show('jobs')">🚚<br>Jobs</button>
+  <button onclick="show('estimate')">
+    🧮<br>Estimate
+  </button>
 
-  <button onclick="show('expenses')">💰<br>Expenses</button>
+  <button onclick="show('jobs')">
+    🚚<br>Jobs
+  </button>
 
-  <button onclick="show('settings')">⚙️<br>Settings</button>
+  <button onclick="show('settings')">
+    ⚙️<br>Settings
+  </button>
 
 </nav>
 
@@ -491,37 +822,77 @@ textarea{
 <script>
 
 const defaultData = {
-  jobs: [],
-  expenses: [],
-  estimates: [],
-  settings: {
-    quarter: 0,
-    half: 0,
-    threequarter: 0,
-    full: 0
+
+  jobs:[],
+
+  expenses:[],
+
+  estimates:[],
+
+  quoteRequests:[],
+
+  settings:{
+    quarter:0,
+    half:0,
+    threequarter:0,
+    full:0
   }
+
 };
 
-let data = JSON.parse(localStorage.getItem("rps612_data")) || defaultData;
 
-function money(value){
-  return "$" + Number(value || 0).toLocaleString("en-US",{
-    minimumFractionDigits:0,
-    maximumFractionDigits:0
-  });
-}
+let data =
+  JSON.parse(localStorage.getItem("rps612_data"))
+  || JSON.parse(JSON.stringify(defaultData));
+
 
 function save(){
-  localStorage.setItem("rps612_data",JSON.stringify(data));
+
+  localStorage.setItem(
+    "rps612_data",
+    JSON.stringify(data)
+  );
+
 }
+
+
+function money(value){
+
+  return "$" +
+    Number(value || 0).toLocaleString(
+      "en-US",
+      {
+        minimumFractionDigits:0,
+        maximumFractionDigits:0
+      }
+    );
+
+}
+
+
+function escapeHtml(text){
+
+  return String(text || "")
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#039;");
+
+}
+
 
 function show(id){
 
-  document.querySelectorAll(".screen").forEach(s=>{
-    s.classList.remove("active");
-  });
+  document
+    .querySelectorAll(".screen")
+    .forEach(s=>{
+      s.classList.remove("active");
+    });
 
-  document.getElementById(id).classList.add("active");
+  document
+    .getElementById(id)
+    .classList.add("active");
 
   renderAll();
 
@@ -529,65 +900,271 @@ function show(id){
     top:0,
     behavior:"smooth"
   });
+
 }
 
 
-function calculateEstimate(){
+/* CUSTOMER FILE PREVIEW */
 
-  const load = document.getElementById("loadSize").value;
-  const special = document.getElementById("specialItems").value;
-  const difficulty = Number(document.getElementById("difficulty").value || 0);
-  const additional = Number(document.getElementById("additional").value || 0);
+function showFiles(inputId,listId){
 
-  const prices = data.settings;
+  const input=document.getElementById(inputId);
 
-  let base = 0;
+  const list=document.getElementById(listId);
 
-  if(load === "quarter") base = prices.quarter;
-  if(load === "half") base = prices.half;
-  if(load === "threequarter") base = prices.threequarter;
-  if(load === "full") base = prices.full;
+  list.innerHTML="";
 
-  let specialCharge = 0;
+  if(!input.files.length) return;
 
-  if(special === "custom"){
-    document.getElementById("customSpecialBox").style.display="block";
-    specialCharge = Number(document.getElementById("customSpecial").value || 0);
-  }else{
-    document.getElementById("customSpecialBox").style.display="none";
-    specialCharge = Number(special || 0);
+  Array.from(input.files).forEach(file=>{
+
+    const div=document.createElement("div");
+
+    div.className="file-item";
+
+    div.innerHTML=
+      "<span>📎 "+
+      escapeHtml(file.name)+
+      "</span><span>"+
+      Math.round(file.size/1024)+
+      " KB</span>";
+
+    list.appendChild(div);
+
+  });
+
+}
+
+
+/* CUSTOMER QUOTE REQUEST */
+
+function submitQuoteRequest(){
+
+  const name=
+    document.getElementById("quoteName")
+    .value.trim();
+
+  const phone=
+    document.getElementById("quotePhone")
+    .value.trim();
+
+  const address=
+    document.getElementById("quoteAddress")
+    .value.trim();
+
+  if(!name){
+
+    alert("Please enter your name.");
+
+    return;
+
   }
 
-  const total = base + specialCharge + difficulty + additional;
+  if(!phone && !document.getElementById("quoteEmail").value.trim()){
 
-  document.getElementById("estimateTotal").textContent = money(total);
+    alert("Please enter a phone number or email.");
+
+    return;
+
+  }
+
+  const photos=
+    document.getElementById("quotePhotos").files;
+
+  const videos=
+    document.getElementById("quoteVideos").files;
+
+  const request={
+
+    id:Date.now(),
+
+    name:name,
+
+    phone:phone,
+
+    email:
+      document
+      .getElementById("quoteEmail")
+      .value.trim(),
+
+    address:address,
+
+    service:
+      document
+      .getElementById("quoteService")
+      .value,
+
+    notes:
+      document
+      .getElementById("quoteNotes")
+      .value,
+
+    photoCount:photos.length,
+
+    videoCount:videos.length,
+
+    date:new Date().toISOString()
+
+  };
+
+  data.quoteRequests.unshift(request);
+
+  save();
+
+  alert(
+    "Quote request saved on this device.\n\n" +
+    "The next version will connect this form to secure cloud storage so RPS can actually receive customer photos and videos."
+  );
+
+  clearQuote();
+
+  show("dashboard");
+
+}
+
+
+function clearQuote(){
+
+  document.getElementById("quoteName").value="";
+  document.getElementById("quotePhone").value="";
+  document.getElementById("quoteEmail").value="";
+  document.getElementById("quoteAddress").value="";
+  document.getElementById("quoteNotes").value="";
+
+  document.getElementById("quotePhotos").value="";
+  document.getElementById("quoteVideos").value="";
+
+  document.getElementById("photoList").innerHTML="";
+  document.getElementById("videoList").innerHTML="";
+
+}
+
+
+/* ESTIMATOR */
+
+function calculateEstimate(){
+
+  const load=
+    document.getElementById("loadSize").value;
+
+  const special=
+    document.getElementById("specialItems").value;
+
+  const difficulty=
+    Number(
+      document.getElementById("difficulty").value
+      || 0
+    );
+
+  const additional=
+    Number(
+      document.getElementById("additional").value
+      || 0
+    );
+
+  let base=0;
+
+  if(load==="quarter")
+    base=data.settings.quarter;
+
+  if(load==="half")
+    base=data.settings.half;
+
+  if(load==="threequarter")
+    base=data.settings.threequarter;
+
+  if(load==="full")
+    base=data.settings.full;
+
+
+  let specialCharge=0;
+
+  if(special==="custom"){
+
+    document
+      .getElementById("customSpecialBox")
+      .style.display="block";
+
+    specialCharge=
+      Number(
+        document
+          .getElementById("customSpecial")
+          .value || 0
+      );
+
+  }else{
+
+    document
+      .getElementById("customSpecialBox")
+      .style.display="none";
+
+    specialCharge=Number(special || 0);
+
+  }
+
+
+  const total=
+    base+
+    specialCharge+
+    difficulty+
+    additional;
+
+
+  document
+    .getElementById("estimateTotal")
+    .textContent=money(total);
+
 
   return total;
+
 }
 
 
 function saveEstimate(){
 
-  const total = calculateEstimate();
+  const total=calculateEstimate();
 
-  const customer = document.getElementById("estCustomer").value.trim();
+  const customer=
+    document
+      .getElementById("estCustomer")
+      .value.trim();
 
   if(!customer){
+
     alert("Please enter the customer name.");
+
     return;
+
   }
 
-  const estimate = {
-    id:Date.now(),
-    customer,
-    phone:document.getElementById("estPhone").value,
-    address:document.getElementById("estAddress").value,
-    load:document.getElementById("loadSize").value,
-    total,
-    date:new Date().toISOString()
-  };
 
-  data.estimates.unshift(estimate);
+  data.estimates.unshift({
+
+    id:Date.now(),
+
+    customer:customer,
+
+    phone:
+      document
+      .getElementById("estPhone")
+      .value,
+
+    address:
+      document
+      .getElementById("estAddress")
+      .value,
+
+    load:
+      document
+      .getElementById("loadSize")
+      .value,
+
+    total:total,
+
+    date:new Date().toISOString()
+
+  });
+
 
   save();
 
@@ -596,6 +1173,7 @@ function saveEstimate(){
   clearEstimate();
 
   show("dashboard");
+
 }
 
 
@@ -611,32 +1189,78 @@ function clearEstimate(){
   document.getElementById("customSpecial").value="0";
 
   calculateEstimate();
+
 }
 
 
+/* JOBS */
+
 function addJob(){
 
-  const customer=document.getElementById("jobCustomer").value.trim();
+  const customer=
+    document
+      .getElementById("jobCustomer")
+      .value.trim();
 
   if(!customer){
+
     alert("Please enter a customer.");
+
     return;
+
   }
 
-  const job={
-    id:Date.now(),
-    customer,
-    phone:document.getElementById("jobPhone").value,
-    service:document.getElementById("jobService").value,
-    address:document.getElementById("jobAddress").value,
-    date:document.getElementById("jobDate").value,
-    status:document.getElementById("jobStatus").value,
-    estimate:Number(document.getElementById("jobEstimate").value || 0),
-    paid:document.getElementById("jobPaid").value,
-    notes:document.getElementById("jobNotes").value
-  };
 
-  data.jobs.unshift(job);
+  data.jobs.unshift({
+
+    id:Date.now(),
+
+    customer:customer,
+
+    phone:
+      document
+      .getElementById("jobPhone")
+      .value,
+
+    service:
+      document
+      .getElementById("jobService")
+      .value,
+
+    address:
+      document
+      .getElementById("jobAddress")
+      .value,
+
+    date:
+      document
+      .getElementById("jobDate")
+      .value,
+
+    status:
+      document
+      .getElementById("jobStatus")
+      .value,
+
+    estimate:
+      Number(
+        document
+        .getElementById("jobEstimate")
+        .value || 0
+      ),
+
+    paid:
+      document
+      .getElementById("jobPaid")
+      .value,
+
+    notes:
+      document
+      .getElementById("jobNotes")
+      .value
+
+  });
+
 
   save();
 
@@ -649,216 +1273,438 @@ function addJob(){
   alert("Job saved!");
 
   show("jobs");
+
 }
 
 
 function renderJobs(){
 
-  const list=document.getElementById("jobsList");
+  const list=
+    document.getElementById("jobsList");
 
-  const search=(document.getElementById("jobSearch")?.value || "").toLowerCase();
+  const search=
+    (
+      document
+      .getElementById("jobSearch")
+      ?.value
+      || ""
+    ).toLowerCase();
 
-  const jobs=data.jobs.filter(j=>
-    j.customer.toLowerCase().includes(search) ||
-    j.address.toLowerCase().includes(search) ||
-    j.service.toLowerCase().includes(search)
-  );
+
+  const jobs=
+    data.jobs.filter(j=>
+
+      j.customer
+      .toLowerCase()
+      .includes(search)
+
+      ||
+
+      j.address
+      .toLowerCase()
+      .includes(search)
+
+      ||
+
+      j.service
+      .toLowerCase()
+      .includes(search)
+
+    );
+
 
   if(!jobs.length){
-    list.innerHTML='<div class="card muted">No jobs found.</div>';
+
+    list.innerHTML=
+      '<div class="card muted">No jobs found.</div>';
+
     return;
+
   }
 
-  list.innerHTML=jobs.map(job=>`
 
-    <div class="job">
+  list.innerHTML=
+    jobs.map(job=>`
 
-      <strong>${escapeHtml(job.customer)}</strong>
+      <div class="job">
 
-      <div class="muted">
-        ${escapeHtml(job.service)}<br>
-        ${escapeHtml(job.address || "No address")}
+        <strong>
+          ${escapeHtml(job.customer)}
+        </strong>
+
+        <div class="muted">
+
+          ${escapeHtml(job.service)}
+          <br>
+
+          ${escapeHtml(
+            job.address || "No address"
+          )}
+
+        </div>
+
+        <span class="badge">
+          ${escapeHtml(job.status)}
+        </span>
+
+        <div
+          style="margin-top:8px;font-weight:700"
+        >
+          ${money(job.estimate)}
+
+          ${
+            job.paid==="yes"
+            ? " • PAID"
+            : " • UNPAID"
+          }
+
+        </div>
+
       </div>
 
-      <span class="badge">${escapeHtml(job.status)}</span>
+    `).join("");
 
-      <div style="margin-top:8px;font-weight:700">
-        ${money(job.estimate)}
-        ${job.paid==="yes" ? " • PAID" : " • UNPAID"}
-      </div>
-
-    </div>
-
-  `).join("");
 }
 
+
+/* DASHBOARD */
 
 function renderDashboard(){
 
-  const today=new Date().toISOString().slice(0,10);
+  const today=
+    new Date()
+    .toISOString()
+    .slice(0,10);
 
-  const todayJobs=data.jobs.filter(j=>j.date===today).length;
 
-  const open=data.jobs.filter(j=>
-    j.status!=="Completed" &&
-    j.status!=="Cancelled"
-  ).length;
+  const todayJobs=
+    data.jobs.filter(
+      j=>j.date===today
+    ).length;
 
-  const revenue=data.jobs
-    .filter(j=>j.paid==="yes")
-    .reduce((sum,j)=>sum+Number(j.estimate||0),0);
 
-  document.getElementById("todayJobs").textContent=todayJobs;
-  document.getElementById("openJobs").textContent=open;
-  document.getElementById("revenue").textContent=money(revenue);
-  document.getElementById("estimateCount").textContent=data.estimates.length;
+  const open=
+    data.jobs.filter(
+      j=>
+        j.status!=="Completed" &&
+        j.status!=="Cancelled"
+    ).length;
 
-  const recent=document.getElementById("recentJobs");
 
-  if(!data.jobs.length){
-    recent.innerHTML='<div class="card muted">No jobs yet. Create your first job or estimate.</div>';
-    return;
+  const revenue=
+    data.jobs
+      .filter(j=>j.paid==="yes")
+      .reduce(
+        (sum,j)=>
+          sum+
+          Number(j.estimate||0),
+        0
+      );
+
+
+  document
+    .getElementById("todayJobs")
+    .textContent=todayJobs;
+
+
+  document
+    .getElementById("openJobs")
+    .textContent=open;
+
+
+  document
+    .getElementById("revenue")
+    .textContent=money(revenue);
+
+
+  document
+    .getElementById("quoteCount")
+    .textContent=
+      data.quoteRequests.length;
+
+
+  const quotes=
+    document
+    .getElementById("recentQuotes");
+
+
+  if(!data.quoteRequests.length){
+
+    quotes.innerHTML=
+      '<div class="card muted">No quote requests yet.</div>';
+
+  }else{
+
+    quotes.innerHTML=
+      data.quoteRequests
+      .slice(0,5)
+      .map(q=>`
+
+        <div class="job">
+
+          <strong>
+            ${escapeHtml(q.name)}
+          </strong>
+
+          <div class="muted">
+
+            ${escapeHtml(q.service)}
+            <br>
+
+            ${escapeHtml(
+              q.address || "No address"
+            )}
+
+          </div>
+
+          <span class="badge">
+            📸 ${q.photoCount}
+            &nbsp;&nbsp;
+            🎥 ${q.videoCount}
+          </span>
+
+          <div
+            class="muted"
+            style="margin-top:8px"
+          >
+            ${escapeHtml(
+              q.notes || "No notes provided."
+            )}
+          </div>
+
+        </div>
+
+      `).join("");
+
   }
 
-  recent.innerHTML=data.jobs.slice(0,5).map(job=>`
 
-    <div class="job">
+  const recent=
+    document
+    .getElementById("recentJobs");
 
-      <strong>${escapeHtml(job.customer)}</strong>
 
-      <div class="muted">${escapeHtml(job.service)}</div>
+  if(!data.jobs.length){
 
-      <span class="badge">${escapeHtml(job.status)}</span>
+    recent.innerHTML=
+      '<div class="card muted">No jobs yet.</div>';
 
-      <div style="margin-top:7px;font-weight:700">
-        ${money(job.estimate)}
-      </div>
+  }else{
 
-    </div>
+    recent.innerHTML=
+      data.jobs
+      .slice(0,5)
+      .map(job=>`
 
-  `).join("");
+        <div class="job">
+
+          <strong>
+            ${escapeHtml(job.customer)}
+          </strong>
+
+          <div class="muted">
+            ${escapeHtml(job.service)}
+          </div>
+
+          <span class="badge">
+            ${escapeHtml(job.status)}
+          </span>
+
+          <div
+            style="margin-top:7px;font-weight:700"
+          >
+            ${money(job.estimate)}
+          </div>
+
+        </div>
+
+      `).join("");
+
+  }
+
 }
 
 
+/* EXPENSES */
+
 function renderExpenses(){
 
-  const list=document.getElementById("expensesList");
+  const list=
+    document.getElementById("expensesList");
+
 
   if(!data.expenses.length){
-    list.innerHTML='<div class="card muted">No expenses yet.</div>';
+
+    list.innerHTML=
+      '<div class="card muted">No expenses yet.</div>';
+
     return;
+
   }
 
-  list.innerHTML=data.expenses.map(e=>`
 
-    <div class="job">
+  list.innerHTML=
+    data.expenses.map(e=>`
 
-      <strong>${escapeHtml(e.description)}</strong>
+      <div class="job">
 
-      <div class="muted">
-        ${escapeHtml(e.date)}
+        <strong>
+          ${escapeHtml(e.description)}
+        </strong>
+
+        <div class="muted">
+          ${escapeHtml(e.date)}
+        </div>
+
+        <div
+          style="margin-top:7px;font-weight:700"
+        >
+          ${money(e.amount)}
+        </div>
+
       </div>
 
-      <div style="margin-top:7px;font-weight:700">
-        ${money(e.amount)}
-      </div>
+    `).join("");
 
-    </div>
-
-  `).join("");
 }
 
 
 function addExpense(){
 
-  const description=prompt("What was the expense for?");
+  const description=
+    prompt("What was the expense for?");
 
   if(!description) return;
 
-  const amount=Number(prompt("Amount?") || 0);
+
+  const amount=
+    Number(
+      prompt("Amount?") || 0
+    );
+
 
   if(!amount) return;
 
+
   data.expenses.unshift({
+
     id:Date.now(),
-    description,
-    amount,
-    date:new Date().toISOString().slice(0,10)
+
+    description:description,
+
+    amount:amount,
+
+    date:
+      new Date()
+      .toISOString()
+      .slice(0,10)
+
   });
+
 
   save();
 
   renderAll();
+
 }
 
 
+/* SETTINGS */
+
 function saveSettings(){
 
-  data.settings.quarter=Number(document.getElementById("setQuarter").value || 0);
-  data.settings.half=Number(document.getElementById("setHalf").value || 0);
-  data.settings.threequarter=Number(document.getElementById("setThree").value || 0);
-  data.settings.full=Number(document.getElementById("setFull").value || 0);
+  data.settings.quarter=
+    Number(
+      document
+      .getElementById("setQuarter")
+      .value || 0
+    );
+
+  data.settings.half=
+    Number(
+      document
+      .getElementById("setHalf")
+      .value || 0
+    );
+
+  data.settings.threequarter=
+    Number(
+      document
+      .getElementById("setThree")
+      .value || 0
+    );
+
+  data.settings.full=
+    Number(
+      document
+      .getElementById("setFull")
+      .value || 0
+    );
+
 
   save();
 
   calculateEstimate();
 
   alert("Pricing saved!");
+
 }
 
 
 function loadSettings(){
 
-  document.getElementById("setQuarter").value=data.settings.quarter;
-  document.getElementById("setHalf").value=data.settings.half;
-  document.getElementById("setThree").value=data.settings.threequarter;
-  document.getElementById("setFull").value=data.settings.full;
+  document
+    .getElementById("setQuarter")
+    .value=data.settings.quarter;
 
-  document.getElementById("priceQuarter").textContent=money(data.settings.quarter);
-  document.getElementById("priceHalf").textContent=money(data.settings.half);
-  document.getElementById("priceThree").textContent=money(data.settings.threequarter);
-  document.getElementById("priceFull").textContent=money(data.settings.full);
+  document
+    .getElementById("setHalf")
+    .value=data.settings.half;
+
+  document
+    .getElementById("setThree")
+    .value=data.settings.threequarter;
+
+  document
+    .getElementById("setFull")
+    .value=data.settings.full;
+
 }
 
 
 function resetData(){
 
-  if(confirm("This will delete all jobs, expenses and estimates on this device. Continue?")){
+  if(
+    confirm(
+      "This will delete all jobs, expenses, estimates and quote requests on this device. Continue?"
+    )
+  ){
 
-    data=JSON.parse(JSON.stringify(defaultData));
+    data=
+      JSON.parse(
+        JSON.stringify(defaultData)
+      );
 
     save();
 
     renderAll();
 
     alert("App data reset.");
+
   }
+
 }
 
 
-function escapeHtml(text){
+/* STARTUP */
 
-  return String(text || "")
-    .replace(/&/g,"&amp;")
-    .replace(/</g,"&lt;")
-    .replace(/>/g,"&gt;")
-    .replace(/"/g,"&quot;")
-    .replace(/'/g,"&#039;");
-}
+document
+  .getElementById("jobDate")
+  .value=
+    new Date()
+    .toISOString()
+    .slice(0,10);
 
-
-function renderAll(){
-
-  renderDashboard();
-  renderJobs();
-  renderExpenses();
-  loadSettings();
-  calculateEstimate();
-}
-
-
-document.getElementById("jobDate").value=
-  new Date().toISOString().slice(0,10);
 
 renderAll();
 
