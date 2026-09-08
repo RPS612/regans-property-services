@@ -1,182 +1,772 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Regan's Property Services</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#111827">
+<title>RPS612 | Regan's Property Services</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: #f3f4f6;
-      color: #111827;
-    }
-
-    header {
-      background: #111827;
-      color: white;
-      padding: 24px 20px;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 24px;
-    }
-
-    header p {
-      margin: 6px 0 0;
-      color: #cbd5e1;
-      font-size: 14px;
-    }
-
-    main {
-      padding: 20px;
-      max-width: 700px;
-      margin: auto;
-    }
-
-    .hero {
-      background: white;
-      border-radius: 20px;
-      padding: 24px;
-      box-shadow: 0 4px 15px rgba(0,0,0,.08);
-    }
-
-    .hero h2 {
-      margin-top: 0;
-      font-size: 26px;
-    }
-
-    .button {
-      display: block;
-      width: 100%;
-      border: 0;
-      border-radius: 14px;
-      padding: 15px;
-      margin-top: 15px;
-      background: #2563eb;
-      color: white;
-      font-size: 16px;
-      font-weight: 700;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-      margin-top: 20px;
-    }
-
-    .card {
-      background: white;
-      border-radius: 16px;
-      padding: 15px;
-    }
-
-    .card strong {
-      display: block;
-      font-size: 25px;
-      margin-top: 5px;
-    }
-
-    .card span {
-      color: #64748b;
-      font-size: 12px;
-    }
-
-    .services {
-      margin-top: 20px;
-      background: white;
-      border-radius: 18px;
-      padding: 20px;
-    }
-
-    .services h3 {
-      margin-top: 0;
-    }
-
-    .service {
-      padding: 14px 0;
-      border-bottom: 1px solid #e5e7eb;
-    }
-
-    .service:last-child {
-      border-bottom: 0;
-    }
-
-    @media (max-width: 500px) {
-      .cards {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;
+ background:#f3f4f6;
+ color:#111827;
+ font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+ padding-bottom:80px
+}
+header{
+ background:#111827;
+ color:white;
+ padding:22px 18px
+}
+.logo{
+ font-size:11px;
+ letter-spacing:2px;
+ color:#93c5fd;
+ font-weight:800
+}
+header h1{margin:4px 0;font-size:21px}
+header p{margin:0;color:#cbd5e1;font-size:12px}
+main{max-width:850px;margin:auto;padding:18px}
+.screen{display:none}
+.screen.active{display:block}
+.hero{
+ background:white;
+ border-radius:20px;
+ padding:20px;
+ box-shadow:0 3px 15px #0001;
+ margin-bottom:15px
+}
+.hero h2{margin:7px 0;font-size:25px}
+.hero p{color:#64748b;margin-top:0}
+button{
+ border:0;
+ border-radius:12px;
+ padding:11px 15px;
+ font-weight:700;
+ font-size:14px
+}
+.primary{background:#2563eb;color:white}
+.secondary{background:#e5e7eb;color:#111827}
+.danger{background:#dc2626;color:white}
+.full{width:100%;padding:14px}
+.stats{
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ gap:10px;
+ margin:15px 0 25px
+}
+.stat{
+ background:white;
+ border-radius:16px;
+ padding:15px
+}
+.stat span,.stat small{
+ display:block;
+ color:#64748b;
+ font-size:12px
+}
+.stat strong{
+ display:block;
+ font-size:24px;
+ margin:4px 0
+}
+.section-head,.page-head{
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ margin:15px 0
+}
+.section-head h3,.page-head h2{margin:0}
+.list{display:grid;gap:10px}
+.card{
+ background:white;
+ border-radius:16px;
+ padding:16px;
+ box-shadow:0 2px 10px #0000000a
+}
+.job-top{
+ display:flex;
+ justify-content:space-between;
+ gap:10px
+}
+.card h3{margin:0 0 5px}
+.card p{
+ margin:4px 0;
+ color:#64748b;
+ font-size:13px
+}
+.status{
+ background:#dbeafe;
+ color:#1d4ed8;
+ padding:5px 8px;
+ border-radius:99px;
+ font-size:11px;
+ height:max-content;
+ white-space:nowrap
+}
+.money{
+ font-weight:800;
+ margin-top:10px
+}
+.form{
+ background:white;
+ border-radius:18px;
+ padding:18px;
+ display:grid;
+ gap:13px
+}
+label{
+ display:grid;
+ gap:6px;
+ font-size:13px;
+ font-weight:700
+}
+input,select,textarea{
+ width:100%;
+ padding:12px;
+ border:1px solid #d1d5db;
+ border-radius:10px;
+ font:inherit;
+ background:white
+}
+.grid{
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ gap:12px
+}
+.search{
+ width:100%;
+ padding:13px;
+ border:1px solid #d1d5db;
+ border-radius:12px;
+ margin-bottom:12px;
+ font:inherit
+}
+.menu{
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ gap:10px;
+ margin-top:15px
+}
+.menu button{
+ background:white;
+ padding:18px;
+ text-align:left;
+ box-shadow:0 2px 10px #0001
+}
+.menu span{
+ display:block;
+ font-size:22px;
+ margin-bottom:5px
+}
+nav{
+ position:fixed;
+ bottom:0;
+ left:0;
+ right:0;
+ height:70px;
+ background:white;
+ border-top:1px solid #e5e7eb;
+ display:grid;
+ grid-template-columns:repeat(4,1fr);
+ z-index:10
+}
+nav button{
+ background:none;
+ color:#64748b;
+ border-radius:0
+}
+nav small{display:block;font-size:10px;margin-top:3px}
+.settings{
+ background:white;
+ border-radius:18px;
+ padding:18px
+}
+.settings div{
+ padding:14px 0;
+ border-bottom:1px solid #e5e7eb
+}
+.settings div:last-child{border-bottom:0}
+.settings span{
+ display:block;
+ color:#64748b;
+ margin-top:4px;
+ font-size:13px
+}
+#toast{
+ display:none;
+ position:fixed;
+ bottom:85px;
+ left:50%;
+ transform:translateX(-50%);
+ background:#111827;
+ color:white;
+ padding:11px 16px;
+ border-radius:99px;
+ z-index:20;
+ font-size:13px
+}
+@media(max-width:500px){
+ .stats{grid-template-columns:1fr}
+ .grid{grid-template-columns:1fr}
+}
+</style>
 </head>
 
 <body>
 
-  <header>
-    <h1>Regan's Property Services</h1>
-    <p>Removal • Cleanouts • Property Preservation</p>
-  </header>
+<header>
+<div class="logo">RPS612</div>
+<h1>Regan's Property Services</h1>
+<p>Removal • Cleanouts • Property Preservation</p>
+</header>
 
-  <main>
+<main>
 
-    <div class="hero">
-      <h2>Welcome to RPS</h2>
-      <p>
-        Your field-service management system starts here.
-      </p>
+<!-- DASHBOARD -->
+<section id="dashboard" class="screen active">
 
-      <button class="button" onclick="alert('New Job feature coming next!')">
-        + New Job
-      </button>
-    </div>
+<div class="hero">
+<div class="logo">FIELD SERVICE MANAGEMENT</div>
+<h2>Welcome back, Regan.</h2>
+<p>Your business command center.</p>
+<button class="primary" onclick="show('newjob')">+ New Job</button>
+</div>
 
-    <div class="cards">
-      <div class="card">
-        <span>Today's Jobs</span>
-        <strong>0</strong>
-      </div>
+<div class="stats">
+<div class="stat">
+<span>Today's Jobs</span>
+<strong id="todayJobs">0</strong>
+<small>Scheduled today</small>
+</div>
 
-      <div class="card">
-        <span>Open Jobs</span>
-        <strong>0</strong>
-      </div>
+<div class="stat">
+<span>Open Jobs</span>
+<strong id="openJobs">0</strong>
+<small>Needs attention</small>
+</div>
 
-      <div class="card">
-        <span>Revenue</span>
-        <strong>$0</strong>
-      </div>
-    </div>
+<div class="stat">
+<span>Revenue</span>
+<strong id="revenue">$0</strong>
+<small>Payments received</small>
+</div>
+</div>
 
-    <div class="services">
-      <h3>Services</h3>
+<div class="section-head">
+<h3>Quick Actions</h3>
+</div>
 
-      <div class="service">
-        <strong>🗑️ Junk Removal</strong>
-        <br>
-        <span>Residential and commercial removal</span>
-      </div>
+<div class="menu">
+<button onclick="show('newjob')">
+<span>➕</span>
+New Job
+</button>
 
-      <div class="service">
-        <strong>🏠 Cleanouts</strong>
-        <br>
-        <span>Estate, rental, foreclosure and property cleanouts</span>
-      </div>
+<button onclick="show('jobs')">
+<span>📋</span>
+View Jobs
+</button>
 
-      <div class="service">
-        <strong>🔧 Property Preservation</strong>
-        <br>
-        <span>REO and vacant-property field services</span>
-      </div>
-    </div>
+<button onclick="show('expenses')">
+<span>💵</span>
+Expenses
+</button>
 
-  </main>
+<button onclick="show('settings')">
+<span>⚙️</span>
+Settings
+</button>
+</div>
+
+<div class="section-head">
+<h3>Recent Jobs</h3>
+<button onclick="show('jobs')">View All</button>
+</div>
+
+<div id="recentJobs" class="list"></div>
+
+</section>
+
+
+<!-- JOBS -->
+<section id="jobs" class="screen">
+
+<div class="page-head">
+<h2>Jobs</h2>
+<button class="primary" onclick="show('newjob')">+ New</button>
+</div>
+
+<input
+ id="jobSearch"
+ class="search"
+ placeholder="Search customers, addresses or services..."
+ oninput="renderJobs()"
+>
+
+<div id="jobList" class="list"></div>
+
+</section>
+
+
+<!-- NEW JOB -->
+<section id="newjob" class="screen">
+
+<div class="page-head">
+<h2>New Job</h2>
+<button class="secondary" onclick="show('jobs')">Cancel</button>
+</div>
+
+<form id="jobForm" class="form">
+
+<label>
+Customer Name
+<input name="customer" required placeholder="John Smith">
+</label>
+
+<label>
+Phone
+<input name="phone" type="tel" placeholder="(612) 555-0123">
+</label>
+
+<label>
+Service
+<select name="service">
+<option>Junk Removal</option>
+<option>Cleanout</option>
+<option>Property Preservation</option>
+</select>
+</label>
+
+<label>
+Property Address
+<input name="address" required placeholder="123 Main St, Minneapolis, MN">
+</label>
+
+<div class="grid">
+
+<label>
+Date
+<input name="date" type="date" required>
+</label>
+
+<label>
+Status
+<select name="status">
+<option>Scheduled</option>
+<option>In Progress</option>
+<option>Completed</option>
+<option>Cancelled</option>
+</select>
+</label>
+
+</div>
+
+<div class="grid">
+
+<label>
+Estimate
+<input name="estimate" type="number" min="0" step=".01" placeholder="0.00">
+</label>
+
+<label>
+Amount Paid
+<input name="paid" type="number" min="0" step=".01" placeholder="0.00">
+</label>
+
+</div>
+
+<label>
+Job Notes
+<textarea name="notes" rows="4" placeholder="Access details, volume, special instructions..."></textarea>
+</label>
+
+<button class="primary full" type="submit">
+Save Job
+</button>
+
+</form>
+
+</section>
+
+
+<!-- EXPENSES -->
+<section id="expenses" class="screen">
+
+<div class="page-head">
+<h2>Expenses</h2>
+<button class="primary" onclick="addExpense()">+ Expense</button>
+</div>
+
+<div id="expenseList" class="list"></div>
+
+</section>
+
+
+<!-- SETTINGS -->
+<section id="settings" class="screen">
+
+<div class="page-head">
+<h2>Settings</h2>
+</div>
+
+<div class="settings">
+
+<div>
+<strong>Business</strong>
+<span>Regan's Property Services</span>
+</div>
+
+<div>
+<strong>Username</strong>
+<span>RPS612</span>
+</div>
+
+<div>
+<strong>Services</strong>
+<span>Removal • Cleanouts • Property Preservation</span>
+</div>
+
+<div>
+<strong>App Version</strong>
+<span>RPS Field Service v1</span>
+</div>
+
+</div>
+
+<br>
+
+<button class="danger full" onclick="resetData()">
+Reset Local Data
+</button>
+
+</section>
+
+</main>
+
+
+<nav>
+
+<button onclick="show('dashboard')">
+⌂
+<small>Home</small>
+</button>
+
+<button onclick="show('jobs')">
+▣
+<small>Jobs</small>
+</button>
+
+<button onclick="show('expenses')">
+$
+<small>Expenses</small>
+</button>
+
+<button onclick="show('settings')">
+⚙
+<small>Settings</small>
+</button>
+
+</nav>
+
+<div id="toast"></div>
+
+
+<script>
+
+const KEY="rps612_data";
+
+let data=JSON.parse(localStorage.getItem(KEY)||"null")||{
+ jobs:[],
+ expenses:[]
+};
+
+function money(value){
+ return "$"+Number(value||0).toLocaleString(
+ "en-US",
+ {
+ minimumFractionDigits:2,
+ maximumFractionDigits:2
+ }
+ );
+}
+
+function esc(value=""){
+ return String(value).replace(/[&<>"']/g,function(c){
+ return {
+ "&":"&amp;",
+ "<":"&lt;",
+ ">":"&gt;",
+ '"':"&quot;",
+ "'":"&#039;"
+ }[c];
+ });
+}
+
+function save(){
+ localStorage.setItem(KEY,JSON.stringify(data));
+ renderAll();
+}
+
+function show(id){
+
+ document.querySelectorAll(".screen")
+ .forEach(function(screen){
+ screen.classList.remove("active");
+ });
+
+ document.getElementById(id).classList.add("active");
+
+ renderAll();
+
+ window.scrollTo(0,0);
+}
+
+document.getElementById("jobForm")
+.addEventListener("submit",function(event){
+
+ event.preventDefault();
+
+ const form=new FormData(event.target);
+
+ const job={
+ id:Date.now(),
+ customer:form.get("customer"),
+ phone:form.get("phone"),
+ service:form.get("service"),
+ address:form.get("address"),
+ date:form.get("date"),
+ status:form.get("status"),
+ estimate:Number(form.get("estimate")||0),
+ paid:Number(form.get("paid")||0),
+ notes:form.get("notes"),
+ created:Date.now()
+ };
+
+ data.jobs.unshift(job);
+
+ save();
+
+ event.target.reset();
+
+ toast("Job saved successfully");
+
+ show("jobs");
+
+});
+
+
+function jobCard(job){
+
+ return `
+ <article class="card">
+
+ <div class="job-top">
+
+ <div>
+
+ <h3>${esc(job.customer)}</h3>
+
+ <p>${esc(job.service)}</p>
+
+ <p>📍 ${esc(job.address)}</p>
+
+ <p>📅 ${esc(job.date)}</p>
+
+ </div>
+
+ <span class="status">
+ ${esc(job.status)}
+ </span>
+
+ </div>
+
+ <div class="money">
+ ${money(job.paid)} paid
+ · ${money(job.estimate)} estimate
+ </div>
+
+ ${job.notes?
+ `<p>📝 ${esc(job.notes)}</p>`
+ :""
+ }
+
+ </article>
+ `;
+
+}
+
+
+function renderDashboard(){
+
+ const today=new Date()
+ .toISOString()
+ .slice(0,10);
+
+ document.getElementById("todayJobs")
+ .textContent=data.jobs
+ .filter(job=>job.date===today)
+ .length;
+
+ document.getElementById("openJobs")
+ .textContent=data.jobs
+ .filter(job=>
+ !["Completed","Cancelled"]
+ .includes(job.status)
+ )
+ .length;
+
+ const revenue=data.jobs
+ .reduce((total,job)=>
+ total+Number(job.paid||0),0);
+
+ document.getElementById("revenue")
+ .textContent=money(revenue);
+
+ document.getElementById("recentJobs")
+ .innerHTML=data.jobs
+ .slice(0,3)
+ .map(jobCard)
+ .join("")
+ ||
+ `<div class="card">
+ <strong>No jobs yet.</strong>
+ <p>Create your first job above.</p>
+ </div>`;
+
+}
+
+
+function renderJobs(){
+
+ const search=(document.getElementById("jobSearch")
+ ?.value||"")
+ .toLowerCase();
+
+ const jobs=data.jobs.filter(job=>
+ (
+ job.customer+" "+
+ job.address+" "+
+ job.service
+ )
+ .toLowerCase()
+ .includes(search)
+ );
+
+ document.getElementById("jobList")
+ .innerHTML=jobs.map(jobCard).join("")
+ ||
+ `<div class="card">
+ <strong>No matching jobs.</strong>
+ <p>Create a new job to get started.</p>
+ </div>`;
+
+}
+
+
+function renderExpenses(){
+
+ document.getElementById("expenseList")
+ .innerHTML=data.expenses.map(expense=>`
+
+ <div class="card">
+
+ <div style="display:flex;justify-content:space-between">
+
+ <div>
+ <strong>${esc(expense.name)}</strong>
+ <p>${esc(expense.date)}</p>
+ </div>
+
+ <strong>${money(expense.amount)}</strong>
+
+ </div>
+
+ </div>
+
+ `).join("")
+ ||
+ `<div class="card">
+ <strong>No expenses yet.</strong>
+ <p>Your business expenses will appear here.</p>
+ </div>`;
+
+}
+
+
+function addExpense(){
+
+ const name=prompt("What was the expense?");
+
+ if(!name)return;
+
+ const amount=prompt("Amount:");
+
+ if(!amount || isNaN(amount))return;
+
+ data.expenses.unshift({
+ name:name,
+ amount:Number(amount),
+ date:new Date().toLocaleDateString()
+ });
+
+ save();
+
+ toast("Expense added");
+
+}
+
+
+function resetData(){
+
+ if(confirm("Delete all RPS jobs and expenses stored on this device?")){
+
+ localStorage.removeItem(KEY);
+
+ data={
+ jobs:[],
+ expenses:[]
+ };
+
+ renderAll();
+
+ toast("Local data reset");
+
+ }
+
+}
+
+
+function toast(message){
+
+ const box=document.getElementById("toast");
+
+ box.textContent=message;
+
+ box.style.display="block";
+
+ setTimeout(function(){
+ box.style.display="none";
+ },1800);
+
+}
+
+
+function renderAll(){
+
+ renderDashboard();
+
+ renderJobs();
+
+ renderExpenses();
+
+}
+
+renderAll();
+
+</script>
 
 </body>
 </html>
