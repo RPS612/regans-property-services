@@ -9,208 +9,199 @@
 <style>
 *{box-sizing:border-box}
 body{
- margin:0;
- background:#f3f4f6;
- color:#111827;
- font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
- padding-bottom:80px
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+  background:#f3f4f6;
+  color:#111827;
 }
 header{
- background:#111827;
- color:white;
- padding:22px 18px
+  background:#111827;
+  color:white;
+  padding:20px 16px;
+  position:sticky;
+  top:0;
+  z-index:10;
 }
-.logo{
- font-size:11px;
- letter-spacing:2px;
- color:#93c5fd;
- font-weight:800
+.brand{
+  font-size:22px;
+  font-weight:800;
 }
-header h1{margin:4px 0;font-size:21px}
-header p{margin:0;color:#cbd5e1;font-size:12px}
-main{max-width:850px;margin:auto;padding:18px}
+.tagline{
+  font-size:12px;
+  opacity:.75;
+  margin-top:3px;
+}
+main{
+  max-width:700px;
+  margin:auto;
+  padding:16px 16px 90px;
+}
 .screen{display:none}
 .screen.active{display:block}
-.hero{
- background:white;
- border-radius:20px;
- padding:20px;
- box-shadow:0 3px 15px #0001;
- margin-bottom:15px
+h1{
+  font-size:25px;
+  margin:8px 0 18px;
 }
-.hero h2{margin:7px 0;font-size:25px}
-.hero p{color:#64748b;margin-top:0}
-button{
- border:0;
- border-radius:12px;
- padding:11px 15px;
- font-weight:700;
- font-size:14px
+h2{
+  font-size:19px;
+  margin:20px 0 12px;
 }
-.primary{background:#2563eb;color:white}
-.secondary{background:#e5e7eb;color:#111827}
-.danger{background:#dc2626;color:white}
-.full{width:100%;padding:14px}
-.stats{
- display:grid;
- grid-template-columns:repeat(3,1fr);
- gap:10px;
- margin:15px 0 25px
-}
-.stat{
- background:white;
- border-radius:16px;
- padding:15px
-}
-.stat span,.stat small{
- display:block;
- color:#64748b;
- font-size:12px
-}
-.stat strong{
- display:block;
- font-size:24px;
- margin:4px 0
-}
-.section-head,.page-head{
- display:flex;
- justify-content:space-between;
- align-items:center;
- margin:15px 0
-}
-.section-head h3,.page-head h2{margin:0}
-.list{display:grid;gap:10px}
 .card{
- background:white;
- border-radius:16px;
- padding:16px;
- box-shadow:0 2px 10px #0000000a
-}
-.job-top{
- display:flex;
- justify-content:space-between;
- gap:10px
-}
-.card h3{margin:0 0 5px}
-.card p{
- margin:4px 0;
- color:#64748b;
- font-size:13px
-}
-.status{
- background:#dbeafe;
- color:#1d4ed8;
- padding:5px 8px;
- border-radius:99px;
- font-size:11px;
- height:max-content;
- white-space:nowrap
-}
-.money{
- font-weight:800;
- margin-top:10px
-}
-.form{
- background:white;
- border-radius:18px;
- padding:18px;
- display:grid;
- gap:13px
-}
-label{
- display:grid;
- gap:6px;
- font-size:13px;
- font-weight:700
-}
-input,select,textarea{
- width:100%;
- padding:12px;
- border:1px solid #d1d5db;
- border-radius:10px;
- font:inherit;
- background:white
+  background:white;
+  border-radius:16px;
+  padding:16px;
+  margin-bottom:14px;
+  box-shadow:0 2px 10px rgba(0,0,0,.06);
 }
 .grid{
- display:grid;
- grid-template-columns:1fr 1fr;
- gap:12px
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
 }
-.search{
- width:100%;
- padding:13px;
- border:1px solid #d1d5db;
- border-radius:12px;
- margin-bottom:12px;
- font:inherit
+.stat{
+  background:#111827;
+  color:white;
+  border-radius:16px;
+  padding:16px;
 }
-.menu{
- display:grid;
- grid-template-columns:1fr 1fr;
- gap:10px;
- margin-top:15px
+.stat small{
+  opacity:.7;
 }
-.menu button{
- background:white;
- padding:18px;
- text-align:left;
- box-shadow:0 2px 10px #0001
+.stat strong{
+  display:block;
+  font-size:25px;
+  margin-top:6px;
 }
-.menu span{
- display:block;
- font-size:22px;
- margin-bottom:5px
+button{
+  border:0;
+  border-radius:12px;
+  padding:13px 15px;
+  font-size:15px;
+  font-weight:700;
+  cursor:pointer;
 }
-nav{
- position:fixed;
- bottom:0;
- left:0;
- right:0;
- height:70px;
- background:white;
- border-top:1px solid #e5e7eb;
- display:grid;
- grid-template-columns:repeat(4,1fr);
- z-index:10
+.primary{
+  background:#111827;
+  color:white;
 }
-nav button{
- background:none;
- color:#64748b;
- border-radius:0
+.secondary{
+  background:#e5e7eb;
+  color:#111827;
 }
-nav small{display:block;font-size:10px;margin-top:3px}
-.settings{
- background:white;
- border-radius:18px;
- padding:18px
+.success{
+  background:#166534;
+  color:white;
 }
-.settings div{
- padding:14px 0;
- border-bottom:1px solid #e5e7eb
+.danger{
+  background:#b91c1c;
+  color:white;
 }
-.settings div:last-child{border-bottom:0}
-.settings span{
- display:block;
- color:#64748b;
- margin-top:4px;
- font-size:13px
+.actions{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
 }
-#toast{
- display:none;
- position:fixed;
- bottom:85px;
- left:50%;
- transform:translateX(-50%);
- background:#111827;
- color:white;
- padding:11px 16px;
- border-radius:99px;
- z-index:20;
- font-size:13px
+label{
+  display:block;
+  font-size:13px;
+  font-weight:700;
+  margin:12px 0 6px;
 }
-@media(max-width:500px){
- .stats{grid-template-columns:1fr}
- .grid{grid-template-columns:1fr}
+input,select,textarea{
+  width:100%;
+  padding:13px;
+  border:1px solid #d1d5db;
+  border-radius:10px;
+  font-size:16px;
+  background:white;
+}
+textarea{
+  min-height:90px;
+  resize:vertical;
+}
+.full{
+  width:100%;
+  margin-top:12px;
+}
+.job{
+  border:1px solid #e5e7eb;
+  border-radius:12px;
+  padding:13px;
+  margin-top:10px;
+}
+.job strong{
+  display:block;
+  font-size:16px;
+}
+.muted{
+  color:#6b7280;
+  font-size:13px;
+}
+.badge{
+  display:inline-block;
+  padding:5px 9px;
+  border-radius:999px;
+  background:#e5e7eb;
+  font-size:12px;
+  font-weight:700;
+  margin-top:7px;
+}
+.estimate-total{
+  background:#111827;
+  color:white;
+  border-radius:16px;
+  padding:20px;
+  margin-top:16px;
+  text-align:center;
+}
+.estimate-total small{
+  opacity:.7;
+}
+.estimate-total strong{
+  display:block;
+  font-size:38px;
+  margin-top:5px;
+}
+.price-row{
+  display:flex;
+  justify-content:space-between;
+  padding:9px 0;
+  border-bottom:1px solid #eee;
+}
+.price-row:last-child{
+  border-bottom:0;
+}
+.nav{
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  background:white;
+  border-top:1px solid #ddd;
+  display:flex;
+  justify-content:space-around;
+  padding:8px 4px;
+  z-index:20;
+}
+.nav button{
+  background:none;
+  color:#6b7280;
+  font-size:11px;
+  padding:7px;
+}
+.nav button.active{
+  color:#111827;
+  font-weight:800;
+}
+.note{
+  background:#fef3c7;
+  border-radius:12px;
+  padding:12px;
+  font-size:13px;
+  margin-top:12px;
+}
+@media(min-width:650px){
+  .actions{grid-template-columns:repeat(4,1fr)}
 }
 </style>
 </head>
@@ -218,75 +209,144 @@ nav small{display:block;font-size:10px;margin-top:3px}
 <body>
 
 <header>
-<div class="logo">RPS612</div>
-<h1>Regan's Property Services</h1>
-<p>Removal • Cleanouts • Property Preservation</p>
+  <div class="brand">RPS612</div>
+  <div class="tagline">Removal • Cleanouts • Property Preservation</div>
 </header>
 
 <main>
 
 <!-- DASHBOARD -->
 <section id="dashboard" class="screen active">
+  <h1>Dashboard</h1>
 
-<div class="hero">
-<div class="logo">FIELD SERVICE MANAGEMENT</div>
-<h2>Welcome back, Regan.</h2>
-<p>Your business command center.</p>
-<button class="primary" onclick="show('newjob')">+ New Job</button>
-</div>
+  <div class="grid">
+    <div class="stat">
+      <small>Today's Jobs</small>
+      <strong id="todayJobs">0</strong>
+    </div>
 
-<div class="stats">
-<div class="stat">
-<span>Today's Jobs</span>
-<strong id="todayJobs">0</strong>
-<small>Scheduled today</small>
-</div>
+    <div class="stat">
+      <small>Open Jobs</small>
+      <strong id="openJobs">0</strong>
+    </div>
 
-<div class="stat">
-<span>Open Jobs</span>
-<strong id="openJobs">0</strong>
-<small>Needs attention</small>
-</div>
+    <div class="stat">
+      <small>Revenue</small>
+      <strong id="revenue">$0</strong>
+    </div>
 
-<div class="stat">
-<span>Revenue</span>
-<strong id="revenue">$0</strong>
-<small>Payments received</small>
-</div>
-</div>
+    <div class="stat">
+      <small>Estimates</small>
+      <strong id="estimateCount">0</strong>
+    </div>
+  </div>
 
-<div class="section-head">
-<h3>Quick Actions</h3>
-</div>
+  <h2>Quick Actions</h2>
 
-<div class="menu">
-<button onclick="show('newjob')">
-<span>➕</span>
-New Job
-</button>
+  <div class="actions">
+    <button class="primary" onclick="show('estimate')">🧮 Estimate</button>
+    <button class="primary" onclick="show('newjob')">➕ New Job</button>
+    <button class="secondary" onclick="show('jobs')">🚚 View Jobs</button>
+    <button class="secondary" onclick="show('expenses')">💰 Expenses</button>
+  </div>
 
-<button onclick="show('jobs')">
-<span>📋</span>
-View Jobs
-</button>
+  <h2>Recent Jobs</h2>
+  <div id="recentJobs"></div>
+</section>
 
-<button onclick="show('expenses')">
-<span>💵</span>
-Expenses
-</button>
 
-<button onclick="show('settings')">
-<span>⚙️</span>
-Settings
-</button>
-</div>
+<!-- ESTIMATE -->
+<section id="estimate" class="screen">
 
-<div class="section-head">
-<h3>Recent Jobs</h3>
-<button onclick="show('jobs')">View All</button>
-</div>
+  <h1>Estimate Calculator</h1>
 
-<div id="recentJobs" class="list"></div>
+  <div class="card">
+
+    <label>Customer Name</label>
+    <input id="estCustomer" placeholder="Customer name">
+
+    <label>Phone</label>
+    <input id="estPhone" type="tel" placeholder="Phone number">
+
+    <label>Job Address</label>
+    <input id="estAddress" placeholder="Job address">
+
+    <label>Load Size</label>
+    <select id="loadSize" onchange="calculateEstimate()">
+      <option value="0">Select load size</option>
+      <option value="quarter">¼ Truck</option>
+      <option value="half">½ Truck</option>
+      <option value="threequarter">¾ Truck</option>
+      <option value="full">Full Truck</option>
+    </select>
+
+    <label>Special / Heavy Items</label>
+    <select id="specialItems" onchange="calculateEstimate()">
+      <option value="0">None</option>
+      <option value="25">Small special item +$25</option>
+      <option value="50">Heavy / difficult item +$50</option>
+      <option value="100">Large / specialty item +$100</option>
+      <option value="custom">Custom amount</option>
+    </select>
+
+    <div id="customSpecialBox" style="display:none">
+      <label>Custom Special Item Charge</label>
+      <input id="customSpecial" type="number" min="0" step="1" value="0" oninput="calculateEstimate()">
+    </div>
+
+    <label>Access / Difficulty</label>
+    <select id="difficulty" onchange="calculateEstimate()">
+      <option value="0">Normal access — $0</option>
+      <option value="25">Difficult access — +$25</option>
+      <option value="50">Very difficult access — +$50</option>
+      <option value="100">Extreme / labor-intensive — +$100</option>
+    </select>
+
+    <label>Additional Charge</label>
+    <input id="additional" type="number" min="0" step="1" value="0" oninput="calculateEstimate()">
+
+    <div class="note">
+      Disposal/dump costs are built into the customer quote. No hourly labor billing.
+    </div>
+
+    <div class="estimate-total">
+      <small>Customer Quote</small>
+      <strong id="estimateTotal">$0</strong>
+    </div>
+
+    <button class="success full" onclick="saveEstimate()">💾 Save Estimate</button>
+    <button class="secondary full" onclick="clearEstimate()">Clear</button>
+
+  </div>
+
+  <div class="card">
+    <h2>Current Pricing</h2>
+
+    <div class="price-row">
+      <span>¼ Truck</span>
+      <strong id="priceQuarter">$0</strong>
+    </div>
+
+    <div class="price-row">
+      <span>½ Truck</span>
+      <strong id="priceHalf">$0</strong>
+    </div>
+
+    <div class="price-row">
+      <span>¾ Truck</span>
+      <strong id="priceThree">$0</strong>
+    </div>
+
+    <div class="price-row">
+      <span>Full Truck</span>
+      <strong id="priceFull">$0</strong>
+    </div>
+
+    <p class="muted">
+      Pricing is currently set to $0 until you decide your starting rates.
+      You can update these later in Settings.
+    </p>
+  </div>
 
 </section>
 
@@ -294,19 +354,13 @@ Settings
 <!-- JOBS -->
 <section id="jobs" class="screen">
 
-<div class="page-head">
-<h2>Jobs</h2>
-<button class="primary" onclick="show('newjob')">+ New</button>
-</div>
+  <h1>Jobs</h1>
 
-<input
- id="jobSearch"
- class="search"
- placeholder="Search customers, addresses or services..."
- oninput="renderJobs()"
->
+  <div class="card">
+    <input id="jobSearch" placeholder="Search jobs..." oninput="renderJobs()">
+  </div>
 
-<div id="jobList" class="list"></div>
+  <div id="jobsList"></div>
 
 </section>
 
@@ -314,93 +368,66 @@ Settings
 <!-- NEW JOB -->
 <section id="newjob" class="screen">
 
-<div class="page-head">
-<h2>New Job</h2>
-<button class="secondary" onclick="show('jobs')">Cancel</button>
-</div>
+  <h1>New Job</h1>
 
-<form id="jobForm" class="form">
+  <div class="card">
 
-<label>
-Customer Name
-<input name="customer" required placeholder="John Smith">
-</label>
+    <label>Customer</label>
+    <input id="jobCustomer" placeholder="Customer name">
 
-<label>
-Phone
-<input name="phone" type="tel" placeholder="(612) 555-0123">
-</label>
+    <label>Phone</label>
+    <input id="jobPhone" type="tel" placeholder="Phone number">
 
-<label>
-Service
-<select name="service">
-<option>Junk Removal</option>
-<option>Cleanout</option>
-<option>Property Preservation</option>
-</select>
-</label>
+    <label>Service</label>
+    <select id="jobService">
+      <option>Junk Removal</option>
+      <option>Cleanout</option>
+      <option>Property Preservation</option>
+      <option>Other</option>
+    </select>
 
-<label>
-Property Address
-<input name="address" required placeholder="123 Main St, Minneapolis, MN">
-</label>
+    <label>Address</label>
+    <input id="jobAddress" placeholder="Job address">
 
-<div class="grid">
+    <label>Date</label>
+    <input id="jobDate" type="date">
 
-<label>
-Date
-<input name="date" type="date" required>
-</label>
+    <label>Status</label>
+    <select id="jobStatus">
+      <option>Scheduled</option>
+      <option>In Progress</option>
+      <option>Completed</option>
+      <option>Cancelled</option>
+    </select>
 
-<label>
-Status
-<select name="status">
-<option>Scheduled</option>
-<option>In Progress</option>
-<option>Completed</option>
-<option>Cancelled</option>
-</select>
-</label>
+    <label>Estimate / Price</label>
+    <input id="jobEstimate" type="number" min="0" step="1" placeholder="0">
 
-</div>
+    <label>Paid?</label>
+    <select id="jobPaid">
+      <option value="no">No</option>
+      <option value="yes">Yes</option>
+    </select>
 
-<div class="grid">
+    <label>Notes</label>
+    <textarea id="jobNotes" placeholder="Job details..."></textarea>
 
-<label>
-Estimate
-<input name="estimate" type="number" min="0" step=".01" placeholder="0.00">
-</label>
+    <button class="primary full" onclick="addJob()">Save Job</button>
 
-<label>
-Amount Paid
-<input name="paid" type="number" min="0" step=".01" placeholder="0.00">
-</label>
-
-</div>
-
-<label>
-Job Notes
-<textarea name="notes" rows="4" placeholder="Access details, volume, special instructions..."></textarea>
-</label>
-
-<button class="primary full" type="submit">
-Save Job
-</button>
-
-</form>
-
+  </div>
 </section>
 
 
 <!-- EXPENSES -->
 <section id="expenses" class="screen">
 
-<div class="page-head">
-<h2>Expenses</h2>
-<button class="primary" onclick="addExpense()">+ Expense</button>
-</div>
+  <h1>Expenses</h1>
 
-<div id="expenseList" class="list"></div>
+  <div class="card">
+    <button class="primary full" onclick="addExpense()">➕ Add Expense</button>
+  </div>
+
+  <div id="expensesList"></div>
 
 </section>
 
@@ -408,361 +435,430 @@ Save Job
 <!-- SETTINGS -->
 <section id="settings" class="screen">
 
-<div class="page-head">
-<h2>Settings</h2>
-</div>
+  <h1>Settings</h1>
 
-<div class="settings">
+  <div class="card">
 
-<div>
-<strong>Business</strong>
-<span>Regan's Property Services</span>
-</div>
+    <h2>Business</h2>
 
-<div>
-<strong>Username</strong>
-<span>RPS612</span>
-</div>
+    <label>Business Name</label>
+    <input id="businessName" value="Regan's Property Services">
 
-<div>
-<strong>Services</strong>
-<span>Removal • Cleanouts • Property Preservation</span>
-</div>
+    <label>Username</label>
+    <input value="RPS612" disabled>
 
-<div>
-<strong>App Version</strong>
-<span>RPS Field Service v1</span>
-</div>
+    <h2>Estimate Pricing</h2>
 
-</div>
+    <label>¼ Truck Price</label>
+    <input id="setQuarter" type="number" min="0" step="1" value="0">
 
-<br>
+    <label>½ Truck Price</label>
+    <input id="setHalf" type="number" min="0" step="1" value="0">
 
-<button class="danger full" onclick="resetData()">
-Reset Local Data
-</button>
+    <label>¾ Truck Price</label>
+    <input id="setThree" type="number" min="0" step="1" value="0">
+
+    <label>Full Truck Price</label>
+    <input id="setFull" type="number" min="0" step="1" value="0">
+
+    <button class="success full" onclick="saveSettings()">Save Settings</button>
+
+    <button class="danger full" onclick="resetData()">Reset App Data</button>
+
+  </div>
 
 </section>
 
 </main>
 
 
-<nav>
+<!-- NAVIGATION -->
+<nav class="nav">
 
-<button onclick="show('dashboard')">
-⌂
-<small>Home</small>
-</button>
+  <button onclick="show('dashboard')">🏠<br>Home</button>
 
-<button onclick="show('jobs')">
-▣
-<small>Jobs</small>
-</button>
+  <button onclick="show('estimate')">🧮<br>Estimate</button>
 
-<button onclick="show('expenses')">
-$
-<small>Expenses</small>
-</button>
+  <button onclick="show('jobs')">🚚<br>Jobs</button>
 
-<button onclick="show('settings')">
-⚙
-<small>Settings</small>
-</button>
+  <button onclick="show('expenses')">💰<br>Expenses</button>
+
+  <button onclick="show('settings')">⚙️<br>Settings</button>
 
 </nav>
-
-<div id="toast"></div>
 
 
 <script>
 
-const KEY="rps612_data";
-
-let data=JSON.parse(localStorage.getItem(KEY)||"null")||{
- jobs:[],
- expenses:[]
+const defaultData = {
+  jobs: [],
+  expenses: [],
+  estimates: [],
+  settings: {
+    quarter: 0,
+    half: 0,
+    threequarter: 0,
+    full: 0
+  }
 };
 
-function money(value){
- return "$"+Number(value||0).toLocaleString(
- "en-US",
- {
- minimumFractionDigits:2,
- maximumFractionDigits:2
- }
- );
-}
+let data = JSON.parse(localStorage.getItem("rps612_data")) || defaultData;
 
-function esc(value=""){
- return String(value).replace(/[&<>"']/g,function(c){
- return {
- "&":"&amp;",
- "<":"&lt;",
- ">":"&gt;",
- '"':"&quot;",
- "'":"&#039;"
- }[c];
- });
+function money(value){
+  return "$" + Number(value || 0).toLocaleString("en-US",{
+    minimumFractionDigits:0,
+    maximumFractionDigits:0
+  });
 }
 
 function save(){
- localStorage.setItem(KEY,JSON.stringify(data));
- renderAll();
+  localStorage.setItem("rps612_data",JSON.stringify(data));
 }
 
 function show(id){
 
- document.querySelectorAll(".screen")
- .forEach(function(screen){
- screen.classList.remove("active");
- });
+  document.querySelectorAll(".screen").forEach(s=>{
+    s.classList.remove("active");
+  });
 
- document.getElementById(id).classList.add("active");
+  document.getElementById(id).classList.add("active");
 
- renderAll();
+  renderAll();
 
- window.scrollTo(0,0);
-}
-
-document.getElementById("jobForm")
-.addEventListener("submit",function(event){
-
- event.preventDefault();
-
- const form=new FormData(event.target);
-
- const job={
- id:Date.now(),
- customer:form.get("customer"),
- phone:form.get("phone"),
- service:form.get("service"),
- address:form.get("address"),
- date:form.get("date"),
- status:form.get("status"),
- estimate:Number(form.get("estimate")||0),
- paid:Number(form.get("paid")||0),
- notes:form.get("notes"),
- created:Date.now()
- };
-
- data.jobs.unshift(job);
-
- save();
-
- event.target.reset();
-
- toast("Job saved successfully");
-
- show("jobs");
-
-});
-
-
-function jobCard(job){
-
- return `
- <article class="card">
-
- <div class="job-top">
-
- <div>
-
- <h3>${esc(job.customer)}</h3>
-
- <p>${esc(job.service)}</p>
-
- <p>📍 ${esc(job.address)}</p>
-
- <p>📅 ${esc(job.date)}</p>
-
- </div>
-
- <span class="status">
- ${esc(job.status)}
- </span>
-
- </div>
-
- <div class="money">
- ${money(job.paid)} paid
- · ${money(job.estimate)} estimate
- </div>
-
- ${job.notes?
- `<p>📝 ${esc(job.notes)}</p>`
- :""
- }
-
- </article>
- `;
-
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
 }
 
 
-function renderDashboard(){
+function calculateEstimate(){
 
- const today=new Date()
- .toISOString()
- .slice(0,10);
+  const load = document.getElementById("loadSize").value;
+  const special = document.getElementById("specialItems").value;
+  const difficulty = Number(document.getElementById("difficulty").value || 0);
+  const additional = Number(document.getElementById("additional").value || 0);
 
- document.getElementById("todayJobs")
- .textContent=data.jobs
- .filter(job=>job.date===today)
- .length;
+  const prices = data.settings;
 
- document.getElementById("openJobs")
- .textContent=data.jobs
- .filter(job=>
- !["Completed","Cancelled"]
- .includes(job.status)
- )
- .length;
+  let base = 0;
 
- const revenue=data.jobs
- .reduce((total,job)=>
- total+Number(job.paid||0),0);
+  if(load === "quarter") base = prices.quarter;
+  if(load === "half") base = prices.half;
+  if(load === "threequarter") base = prices.threequarter;
+  if(load === "full") base = prices.full;
 
- document.getElementById("revenue")
- .textContent=money(revenue);
+  let specialCharge = 0;
 
- document.getElementById("recentJobs")
- .innerHTML=data.jobs
- .slice(0,3)
- .map(jobCard)
- .join("")
- ||
- `<div class="card">
- <strong>No jobs yet.</strong>
- <p>Create your first job above.</p>
- </div>`;
+  if(special === "custom"){
+    document.getElementById("customSpecialBox").style.display="block";
+    specialCharge = Number(document.getElementById("customSpecial").value || 0);
+  }else{
+    document.getElementById("customSpecialBox").style.display="none";
+    specialCharge = Number(special || 0);
+  }
 
+  const total = base + specialCharge + difficulty + additional;
+
+  document.getElementById("estimateTotal").textContent = money(total);
+
+  return total;
+}
+
+
+function saveEstimate(){
+
+  const total = calculateEstimate();
+
+  const customer = document.getElementById("estCustomer").value.trim();
+
+  if(!customer){
+    alert("Please enter the customer name.");
+    return;
+  }
+
+  const estimate = {
+    id:Date.now(),
+    customer,
+    phone:document.getElementById("estPhone").value,
+    address:document.getElementById("estAddress").value,
+    load:document.getElementById("loadSize").value,
+    total,
+    date:new Date().toISOString()
+  };
+
+  data.estimates.unshift(estimate);
+
+  save();
+
+  alert("Estimate saved!");
+
+  clearEstimate();
+
+  show("dashboard");
+}
+
+
+function clearEstimate(){
+
+  document.getElementById("estCustomer").value="";
+  document.getElementById("estPhone").value="";
+  document.getElementById("estAddress").value="";
+  document.getElementById("loadSize").value="0";
+  document.getElementById("specialItems").value="0";
+  document.getElementById("difficulty").value="0";
+  document.getElementById("additional").value="0";
+  document.getElementById("customSpecial").value="0";
+
+  calculateEstimate();
+}
+
+
+function addJob(){
+
+  const customer=document.getElementById("jobCustomer").value.trim();
+
+  if(!customer){
+    alert("Please enter a customer.");
+    return;
+  }
+
+  const job={
+    id:Date.now(),
+    customer,
+    phone:document.getElementById("jobPhone").value,
+    service:document.getElementById("jobService").value,
+    address:document.getElementById("jobAddress").value,
+    date:document.getElementById("jobDate").value,
+    status:document.getElementById("jobStatus").value,
+    estimate:Number(document.getElementById("jobEstimate").value || 0),
+    paid:document.getElementById("jobPaid").value,
+    notes:document.getElementById("jobNotes").value
+  };
+
+  data.jobs.unshift(job);
+
+  save();
+
+  document.getElementById("jobCustomer").value="";
+  document.getElementById("jobPhone").value="";
+  document.getElementById("jobAddress").value="";
+  document.getElementById("jobEstimate").value="";
+  document.getElementById("jobNotes").value="";
+
+  alert("Job saved!");
+
+  show("jobs");
 }
 
 
 function renderJobs(){
 
- const search=(document.getElementById("jobSearch")
- ?.value||"")
- .toLowerCase();
+  const list=document.getElementById("jobsList");
 
- const jobs=data.jobs.filter(job=>
- (
- job.customer+" "+
- job.address+" "+
- job.service
- )
- .toLowerCase()
- .includes(search)
- );
+  const search=(document.getElementById("jobSearch")?.value || "").toLowerCase();
 
- document.getElementById("jobList")
- .innerHTML=jobs.map(jobCard).join("")
- ||
- `<div class="card">
- <strong>No matching jobs.</strong>
- <p>Create a new job to get started.</p>
- </div>`;
+  const jobs=data.jobs.filter(j=>
+    j.customer.toLowerCase().includes(search) ||
+    j.address.toLowerCase().includes(search) ||
+    j.service.toLowerCase().includes(search)
+  );
 
+  if(!jobs.length){
+    list.innerHTML='<div class="card muted">No jobs found.</div>';
+    return;
+  }
+
+  list.innerHTML=jobs.map(job=>`
+
+    <div class="job">
+
+      <strong>${escapeHtml(job.customer)}</strong>
+
+      <div class="muted">
+        ${escapeHtml(job.service)}<br>
+        ${escapeHtml(job.address || "No address")}
+      </div>
+
+      <span class="badge">${escapeHtml(job.status)}</span>
+
+      <div style="margin-top:8px;font-weight:700">
+        ${money(job.estimate)}
+        ${job.paid==="yes" ? " • PAID" : " • UNPAID"}
+      </div>
+
+    </div>
+
+  `).join("");
+}
+
+
+function renderDashboard(){
+
+  const today=new Date().toISOString().slice(0,10);
+
+  const todayJobs=data.jobs.filter(j=>j.date===today).length;
+
+  const open=data.jobs.filter(j=>
+    j.status!=="Completed" &&
+    j.status!=="Cancelled"
+  ).length;
+
+  const revenue=data.jobs
+    .filter(j=>j.paid==="yes")
+    .reduce((sum,j)=>sum+Number(j.estimate||0),0);
+
+  document.getElementById("todayJobs").textContent=todayJobs;
+  document.getElementById("openJobs").textContent=open;
+  document.getElementById("revenue").textContent=money(revenue);
+  document.getElementById("estimateCount").textContent=data.estimates.length;
+
+  const recent=document.getElementById("recentJobs");
+
+  if(!data.jobs.length){
+    recent.innerHTML='<div class="card muted">No jobs yet. Create your first job or estimate.</div>';
+    return;
+  }
+
+  recent.innerHTML=data.jobs.slice(0,5).map(job=>`
+
+    <div class="job">
+
+      <strong>${escapeHtml(job.customer)}</strong>
+
+      <div class="muted">${escapeHtml(job.service)}</div>
+
+      <span class="badge">${escapeHtml(job.status)}</span>
+
+      <div style="margin-top:7px;font-weight:700">
+        ${money(job.estimate)}
+      </div>
+
+    </div>
+
+  `).join("");
 }
 
 
 function renderExpenses(){
 
- document.getElementById("expenseList")
- .innerHTML=data.expenses.map(expense=>`
+  const list=document.getElementById("expensesList");
 
- <div class="card">
+  if(!data.expenses.length){
+    list.innerHTML='<div class="card muted">No expenses yet.</div>';
+    return;
+  }
 
- <div style="display:flex;justify-content:space-between">
+  list.innerHTML=data.expenses.map(e=>`
 
- <div>
- <strong>${esc(expense.name)}</strong>
- <p>${esc(expense.date)}</p>
- </div>
+    <div class="job">
 
- <strong>${money(expense.amount)}</strong>
+      <strong>${escapeHtml(e.description)}</strong>
 
- </div>
+      <div class="muted">
+        ${escapeHtml(e.date)}
+      </div>
 
- </div>
+      <div style="margin-top:7px;font-weight:700">
+        ${money(e.amount)}
+      </div>
 
- `).join("")
- ||
- `<div class="card">
- <strong>No expenses yet.</strong>
- <p>Your business expenses will appear here.</p>
- </div>`;
+    </div>
 
+  `).join("");
 }
 
 
 function addExpense(){
 
- const name=prompt("What was the expense?");
+  const description=prompt("What was the expense for?");
 
- if(!name)return;
+  if(!description) return;
 
- const amount=prompt("Amount:");
+  const amount=Number(prompt("Amount?") || 0);
 
- if(!amount || isNaN(amount))return;
+  if(!amount) return;
 
- data.expenses.unshift({
- name:name,
- amount:Number(amount),
- date:new Date().toLocaleDateString()
- });
+  data.expenses.unshift({
+    id:Date.now(),
+    description,
+    amount,
+    date:new Date().toISOString().slice(0,10)
+  });
 
- save();
+  save();
 
- toast("Expense added");
+  renderAll();
+}
 
+
+function saveSettings(){
+
+  data.settings.quarter=Number(document.getElementById("setQuarter").value || 0);
+  data.settings.half=Number(document.getElementById("setHalf").value || 0);
+  data.settings.threequarter=Number(document.getElementById("setThree").value || 0);
+  data.settings.full=Number(document.getElementById("setFull").value || 0);
+
+  save();
+
+  calculateEstimate();
+
+  alert("Pricing saved!");
+}
+
+
+function loadSettings(){
+
+  document.getElementById("setQuarter").value=data.settings.quarter;
+  document.getElementById("setHalf").value=data.settings.half;
+  document.getElementById("setThree").value=data.settings.threequarter;
+  document.getElementById("setFull").value=data.settings.full;
+
+  document.getElementById("priceQuarter").textContent=money(data.settings.quarter);
+  document.getElementById("priceHalf").textContent=money(data.settings.half);
+  document.getElementById("priceThree").textContent=money(data.settings.threequarter);
+  document.getElementById("priceFull").textContent=money(data.settings.full);
 }
 
 
 function resetData(){
 
- if(confirm("Delete all RPS jobs and expenses stored on this device?")){
+  if(confirm("This will delete all jobs, expenses and estimates on this device. Continue?")){
 
- localStorage.removeItem(KEY);
+    data=JSON.parse(JSON.stringify(defaultData));
 
- data={
- jobs:[],
- expenses:[]
- };
+    save();
 
- renderAll();
+    renderAll();
 
- toast("Local data reset");
-
- }
-
+    alert("App data reset.");
+  }
 }
 
 
-function toast(message){
+function escapeHtml(text){
 
- const box=document.getElementById("toast");
-
- box.textContent=message;
-
- box.style.display="block";
-
- setTimeout(function(){
- box.style.display="none";
- },1800);
-
+  return String(text || "")
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#039;");
 }
 
 
 function renderAll(){
 
- renderDashboard();
-
- renderJobs();
-
- renderExpenses();
-
+  renderDashboard();
+  renderJobs();
+  renderExpenses();
+  loadSettings();
+  calculateEstimate();
 }
+
+
+document.getElementById("jobDate").value=
+  new Date().toISOString().slice(0,10);
 
 renderAll();
 
